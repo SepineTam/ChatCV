@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatCV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/config.js"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <header class="bg-gradient-to-r from-purple-500 to-indigo-600 p-6 text-center">
+        <h1 class="text-4xl font-bold">ChatCV AI</h1>
+        <p class="mt-2 text-gray-200">Your resume powered chatbot</p>
+    </header>
+    <main class="flex-grow container mx-auto p-4">
+        <div id="chat-container" class="rounded-lg shadow-lg bg-gray-800 p-4 h-[70vh] overflow-y-auto">
+            <!-- Dify chat widget will appear here -->
+        </div>
+    </main>
+    <footer class="text-center p-4 text-sm text-gray-400">
+        &copy; 2024 ChatCV
+    </footer>
+
+    <script>
+        const difyAppId = window.DIFY_APP_ID;
+        const difyApiKey = window.DIFY_API_KEY;
+        if (!difyAppId || !difyApiKey) {
+            document.getElementById('chat-container').innerText = 'Dify configuration missing.';
+        } else {
+            const script = document.createElement('script');
+            script.src = `https://udify.app/chat/widget/${difyAppId}.js`;
+            script.setAttribute('data-api-key', difyApiKey);
+            script.defer = true;
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html>
