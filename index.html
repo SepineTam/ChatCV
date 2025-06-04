@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatCV - Sepine</title>
+    <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            min-height: 100vh;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+        .header-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+        .chatbot-container {
+            transition: all 0.3s ease;
+        }
+        .chatbot-container:hover {
+            box-shadow: 0 12px 28px 0 rgba(31, 38, 135, 0.2);
+        }
+    </style>
+</head>
+<body class="flex flex-col">
+    <header class="header-gradient text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <i class="fas fa-robot text-2xl mr-3"></i>
+                    <h1 class="text-2xl font-bold">ChatCV - <a href="https://sepinetam.com">Sepine</a></h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <div class="glassmorphism p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <i class="fas fa-comments text-indigo-600 mr-3"></i>
+                与谭淞的简历对话
+            </h2>
+            <p class="text-gray-600 mb-6">
+                基于AI的可对话简历
+            </p>
+            
+            <div class="chatbot-container glassmorphism overflow-hidden rounded-xl">
+                <iframe 
+                    src="https://udify.app/chatbot/jBcdMIanqnSYuj49" 
+                    style="width: 100%; height: 700px; min-height: 700px" 
+                    frameborder="0" 
+                    allow="microphone"
+                    title="ChatCV"
+                ></iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>回答由AI驱动，仅供参考</p>
+                </div>
+                <div>
+                    <p>created by <a href="https://github.com/sepinetam" class="text-indigo-300 hover:text-indigo-100 transition-colors">Sepine Tam</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
